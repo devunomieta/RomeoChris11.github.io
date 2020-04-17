@@ -198,8 +198,14 @@
 /* Section/Article */
 	section.wrapper{
 		padding: 6em 0;
+		background-color: black;
+		color: white;
 	}
 
+		section.wrapper h3{
+			color: yellow;
+			font-family: cursive;
+		}
 		section.wrapper header, article.wrapper header {
 			margin-bottom: 4em;
 		}
@@ -254,7 +260,7 @@
 		}
 
 	header p {
-		color: #bbb;
+		color: white;
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -291,6 +297,7 @@
 		width: 100%;
 	}
 
+		
 		.flex.flex-2 {
 			-moz-justify-content: space-between;
 			-webkit-justify-content: space-between;
@@ -364,7 +371,6 @@
 	}
 
 	input[type="text"],
-	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
 	textarea {
@@ -372,7 +378,7 @@
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: white;
+		background: grey;
 		border-radius: 10px;
 		border: none;
 		border: solid 2px none;
@@ -385,7 +391,6 @@
 	}
 
 		input[type="text"]:invalid,
-		input[type="password"]:invalid,
 		input[type="email"]:invalid,
 		input[type="tel"]:invalid,
 		textarea:invalid {
@@ -393,12 +398,11 @@
 		}
 
 		input[type="text"]:focus,
-		input[type="password"]:focus,
 		input[type="email"]:focus,
 		input[type="tel"]:focus,
 		textarea:focus {
 			border-color: #4bae77;
-			box-shadow: 0 0 0 1px #4bae77;
+			box-shadow: 0 0 0 3px yellowgreen
 		}
 
 	input[type="text"],
@@ -528,8 +532,8 @@
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: transparent;
-		box-shadow: inset 0 0 0 3px #6cc091;
-		color: #6cc091 !important;
+		box-shadow: inset 0 0 0 3px yellow;
+		color: white !important;
 		border-radius: 30px;
 		border: 0;
 		cursor: pointer;
@@ -602,7 +606,7 @@
 		button.alt,
 		.button.alt {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 3px #FFF;
+			box-shadow: inset 0 0 0 3px yellow;
 			color: #fff !important;
 		}
 
@@ -695,7 +699,7 @@
 		}
 
 		#header .logo {
-			color: #ffffff;
+			color: yellow;
 			display: inline-block;
 			font-weight: 400;
 			height: inherit;
@@ -709,7 +713,7 @@
 		}
 
 			#header .logo strong {
-				color: #ffffff;
+				color: yellow;
 				font-weight: 600;
 			}
 
@@ -720,38 +724,18 @@
 			transition: color 0.2s ease-in-out;
 			display: inline-block;
 			padding: 0 0.75em;
-			color: inherit;
+			color: yellow;
 			text-decoration: none;
 			font-size: 1em;
 		}
 
 			#header a:hover {
-				color: #ffffff;
+				color: white;
 			}
 
 			#header a:last-child {
 				padding-right: 0;
 			}
-
-			#header a.navPanelToggle {
-				display: none;
-				text-decoration: none;
-				height: 4em;
-				width: 4em;
-				z-index: 10003;
-			}
-
-				#header a.navPanelToggle .fa {
-					font-size: 1.25em;
-				}
-
-				@media screen and (max-width: 980px) {
-
-					#header a.navPanelToggle {
-						display: inline-block;
-					}
-
-				}
 
 			@media screen and (max-width: 736px) {
 
@@ -795,99 +779,11 @@
 
 	}
 
-	#navPanel {
-		-moz-transform: translatex(20em);
-		-webkit-transform: translatex(20em);
-		-ms-transform: translatex(20em);
-		transform: translatex(20em);
-		-moz-transition: -moz-transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
-		-webkit-transition: -webkit-transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
-		-ms-transition: -ms-transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
-		transition: transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
-		-webkit-overflow-scrolling: touch;
-		visibility: hidden;
-		overflow-y: auto;
-		position: fixed;
-		right: 0;
-		top: 0;
-		background: #6cc091;
-		color: #daefe3;
-		height: 100%;
-		max-width: 80%;
-		width: 20em;
-		padding: 0.5em 1.25em;
-		z-index: 10010;
-	}
-
-		#navPanel.visible {
-			-moz-transform: translatex(0);
-			-webkit-transform: translatex(0);
-			-ms-transform: translatex(0);
-			transform: translatex(0);
-			box-shadow: 0 0 1.5em 0 rgba(0, 0, 0, 0.2);
-			visibility: visible;
-		}
-
-		#navPanel a:not(.close) {
-			border-top: solid 1px #8dcca9;
-			color: #daefe3;
-			font-weight: 600;
-			display: block;
-			padding: 0.75em 0;
-			text-decoration: none;
-			font-weight: 400;
-		}
-
-			#navPanel a:not(.close):first-child {
-				border: none;
-			}
-
-		#navPanel .close {
-			text-decoration: none;
-			-moz-transition: color 0.2s ease-in-out;
-			-webkit-transition: color 0.2s ease-in-out;
-			-ms-transition: color 0.2s ease-in-out;
-			transition: color 0.2s ease-in-out;
-			-webkit-tap-highlight-color: transparent;
-			border: 0;
-			color: #daefe3;
-			cursor: pointer;
-			display: block;
-			height: 4em;
-			padding-right: 1.25em;
-			position: absolute;
-			right: 0;
-			text-align: right;
-			top: 0;
-			width: 5em;
-		}
-
-			#navPanel .close:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
-				text-transform: none !important;
-				content: '\f00d';
-				width: 3em;
-				height: 3em;
-				line-height: 3em;
-				display: block;
-				position: absolute;
-				right: 0;
-				top: 0;
-				text-align: center;
-			}
-
-			#navPanel .close:hover {
-				color: inherit;
-			}
 
 /* Banner */
 
 	#banner {
-		padding: 8em 0 9em 0;
+		padding: 10em 0 8em 0;
 		background-image: url(../../images/banner.jpg);
 		background-size: cover;
 		background-position: bottom;
@@ -917,7 +813,7 @@
 		#banner h1 {
 			font-size: 4.0em;
 			font-weight: 400;
-			color: #fff;
+			color: yellow;
 			line-height: 0em;
 			margin: 0 0 1em 0;
 			padding: 0;
@@ -925,7 +821,7 @@
 
 		#banner h3 {
 			font-weight: 400;
-			color: #fff;
+			color: white;
 			margin: 0;
 			font-size: 1.5em;
 		}
@@ -937,7 +833,7 @@
 
 		#banner p {
 			font-size: 1em;
-			color: rgba(255, 255, 255, 0.55);
+			color: yellow;
 			margin-bottom: 1.75em;
 		}
 
@@ -948,7 +844,8 @@
 			-ms-justify-content: center;
 			justify-content: center;
 			text-align: center;
-			margin: 0 auto 4em auto;
+			margin: 0 auto 5em auto;
+			padding: auto;
 		}
 
 			#banner .flex div {
@@ -1082,26 +979,28 @@
 
 	#footer {
 		padding: 6em 0;
-		background: rgba(65, 163, 107, 0.15);
+		background: black;
 		color: #fff;
 		text-align: center;
 	}
 
 		#footer h3 {
-			color: #FFF;
+			color: yellow;
 			margin-bottom: 2em !important;
+			font-family: cursive;
 		}
 
 		#footer label {
 			text-align: left;
-			color: #FFF;
+			color: yellow;
+			font-size: large;
 		}
 
 		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
+			color: yellow;
 			font-size: 1.2em;
 			margin: 0 0 2em 0;
-			padding: 0;
+			padding: 5%;
 		}
 
 			#footer .copyright a {
@@ -1112,6 +1011,10 @@
 				#footer .copyright a:hover {
 					color: #FFF;
 				}
+		
+		#footer ::placeholder{
+			color: black;
+		}
 
 		@media screen and (max-width: 980px) {
 
